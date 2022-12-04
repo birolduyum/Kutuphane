@@ -1,0 +1,29 @@
+﻿@page "/buttontest"
+
+<h3>ButtonTest</h3>
+
+<div class="container">
+    <div class="btn-toolbar">        
+        <div class="btn-group">
+            <ButttonComponent Caption="Edit" Icon="pencil" Color="primary" IsSmall="false" ToolTipStr="Test" OnClick="OnClikbtn" />
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public IModalService Modal { get; set; }
+
+    private void OnClikbtn()
+    {
+        ModalParameters mParam = new ModalParameters();
+        string mesaj = "Deneme mesajı"; 
+        mParam.Add("Message", mesaj);
+        
+        Modal.Show<ShowMessagePopupComponent>("First popup page");
+    }
+    
+   
+   
+    
+}

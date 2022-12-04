@@ -1,0 +1,44 @@
+﻿
+@code {
+    [Parameter]
+    public string Message { get; set; }
+    [Parameter]
+    public string OkText { get; set; }
+    [Parameter]
+    public string CancelText { get; set; }
+    [Parameter]
+    public string YesText { get; set; }
+    [Parameter]
+    public string NoText { get; set; }
+
+    [CascadingParameter]
+    BlazoredModalInstance ModalInstance { get; set; }
+    [CascadingParameter]
+    ModalResult ModalResult { get; set; }
+    
+   
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    await base.OnInitializedAsync();
+    //    ModalResult = ModalResult.Cancel();
+        
+    //    if (ModalResult.Cancelled)
+    //    {
+    //        Console.WriteLine("Modal was cancelled");
+    //    }
+    //    else if (ModalResult.Confirmed)
+    //    {
+    //        Console.WriteLine("Modal was closed");
+    //    }
+    //}
+    protected async Task ConfirmClicked()
+    {
+        await ModalInstance.CloseAsync(ModalResult.Ok<string>(""));
+        //await Modal.CloseAsync(ModalResult.Ok(true));
+    }
+    protected async Task CancelClicked()
+    {
+        await ModalInstance.CloseAsync(ModalResult.Cancel());
+        //await Modal.CloseAsync(ModalResult.Cancel());
+    }
+}
