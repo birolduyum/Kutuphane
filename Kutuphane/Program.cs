@@ -2,6 +2,8 @@ using Kutuphane.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Blazored.Modal;
+using Blazored.Modal.Services;
+//using Kutuphane.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddBlazoredModal();
+//builder.Services.AddSingleton<Kutuphane.Utils.ModalManager>();
+builder.Services.AddScoped<Kutuphane.Utils.ModalManager>();
 
 var app = builder.Build();
 

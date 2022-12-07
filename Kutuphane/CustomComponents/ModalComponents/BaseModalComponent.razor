@@ -1,15 +1,15 @@
 ﻿
 @code {
     [Parameter]
-    public string Message { get; set; }
+    public string Message { get; set; } = "No message found";
     [Parameter]
-    public string OkText { get; set; }
+    public string OkText { get; set; } = "OK";
     [Parameter]
-    public string CancelText { get; set; }
+    public string CancelText { get; set; } = "Cancel";
     [Parameter]
-    public string YesText { get; set; }
+    public string YesText { get; set; } = "Operation is complated";
     [Parameter]
-    public string NoText { get; set; }
+    public string NoText { get; set; } = "Operation is not complated";
 
     [CascadingParameter]
     BlazoredModalInstance ModalInstance { get; set; }
