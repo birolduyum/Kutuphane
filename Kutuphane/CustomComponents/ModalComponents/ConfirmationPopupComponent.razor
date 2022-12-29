@@ -13,6 +13,7 @@
     {
         Message = parameters.GetValueOrDefault<string>("Message") ?? "No message found";
         YesText = parameters.GetValueOrDefault<string>("YesText") ?? "Yes";
+        CancelText = parameters.GetValueOrDefault<string>("CancelText") ?? "Cancel";
         await base.SetParametersAsync(parameters);
     }
 }
