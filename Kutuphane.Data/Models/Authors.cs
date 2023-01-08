@@ -8,12 +8,12 @@ namespace Kutuphane.Data.Models
 {
     public class Authors
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime CreateDate { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string EmailAdress { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; }          
 
         public virtual ICollection<Books> Books { get; set; }
     }

@@ -8,7 +8,7 @@ namespace Kutuphane.Data.Models
 {
     public class Publisher
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime CreateDate { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }

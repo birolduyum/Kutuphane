@@ -8,7 +8,7 @@ namespace Kutuphane.Data.Models
 {
     public class Books
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime CreateDate { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -16,9 +16,15 @@ namespace Kutuphane.Data.Models
         public int PageCount { get; set; }
         public string ImageUrl { get; set; }
         public bool IsActive { get; set; }
-        public Guid AuthorId { get; set; }
-        public Guid PublisherId { get; set; }
-        public Guid CategoryId { get; set; }
-        public Guid UserId { get; set; }
+        public int AuthorId { get; set; }
+        public int PublisherId { get; set; }
+        public int CategoryId { get; set; }
+        public int UserId { get; set; }
+
+        public virtual Users User { get; set; }
+        public virtual Authors Author { get; set; }
+        public virtual Categories Category { get; set; }
+        public virtual Publisher Publisher { get; set; }
+        
     }
 }

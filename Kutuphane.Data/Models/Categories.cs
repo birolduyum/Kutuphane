@@ -8,9 +8,10 @@ namespace Kutuphane.Data.Models
 {
     public class Categories
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime CreateDate { get; set; }
         public string Name { get; set; }
         public bool IsActive { get; set; }
+        public virtual ICollection<Books> Books { get; set; }
     }
 }
